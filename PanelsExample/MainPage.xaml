@@ -1,0 +1,41 @@
+﻿<Page
+    x:Class="PanelsExample.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PanelsExample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <!--A grid let's you divide an area in the page with rows and columns-->
+    <Grid>
+        <!--Row Definitions let's you difine rows for the parent grid-->
+        <Grid.RowDefinitions>
+            <!--Setting the height(or width) of a row(or column) to '*' will devide the size of the grid in an equal way-->
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--Colomn Definitions let's you difine columns for the parent grid-->
+        <Grid.ColumnDefinitions>
+            <!--Setting the width(or height) of a column(or row) to 'auto' will determined the size by the elements inside-->
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <!--When you add UIElements to the parent grid you need to define to wich column and row it belongs-->
+        <Image Source="/Assets/image.png" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <!--If you won't specify a location in the grid it will default to 0-->
+        <Image Source="/Assets/image2.png"/>
+        <!--a Stack Panel is a stack for UIElements, the most importent property is Orientation, it let's you define the orientation of the elements-->
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
+            <Rectangle Width="100" Height="100" Fill="Blue"/>
+            <Rectangle Width="100" Height="100" Fill="Red"/>
+            <Rectangle Width="100" Height="100" Fill="Green"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Column="1" VerticalAlignment="Center">
+            <Rectangle Width="100" Height="100" Fill="Blue"/>
+            <Rectangle Width="100" Height="100" Fill="Red"/>
+            <Rectangle Width="100" Height="100" Fill="Green"/>
+        </StackPanel>
+    </Grid>
+</Page>
